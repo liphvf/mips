@@ -1,0 +1,2 @@
+# mips
+mips study
