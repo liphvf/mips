@@ -8,23 +8,18 @@
 	
 	addi $t2, $t1, 10
 	
-	li $v0, 1 # preparando para print
-	
-	add $a0, $t2, $zero # Copiando valor de t2 para a0
-	
-	syscall # chama o print
-	
-	li $v0, 10 # exit program
-	
-	syscall # chama o exit
+	j imprime_exit
 	
 	else:
 		addi $t2, $t1, -10
-	
+		
+	imprime_exit:
 		li $v0, 1 # preparando para print
 	
 		add $a0, $t2, $zero # Copiando valor de t2 para a0
 	
 		syscall
-		
-		
+	
+		li $v0, 10 # exit program
+	
+		syscall # chama o exit			
