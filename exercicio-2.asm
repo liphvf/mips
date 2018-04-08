@@ -2,15 +2,15 @@
 	array: .word 1,12,35,473,2,32,4
 .text
 	li $t2, 6 # Fim
-	li $t3, 0 # Iterador do for (pode ser considero o inicio, visto que ele define o range)
-	la $s0, 0 # Iterador de posicao do array
-	
+	li $t3, 1 # Iterador do for (pode ser considero o inicio, visto que ele define o range)
+	la $s0, 4 # Iterador de posicao do array
+	li $s2, 0 # Somador
 	
 	bgt $t3, $t2, emprime_exit
 	
 	for:
 		add $t3, $t3, 1 # intera o for
-		lw $s1, array($s0) # carrega o valor desta posição do array
+		lw $s1, array($s0) # carrega o valor desta posiï¿½ï¿½o do array
 		add $s2, $s2, $s1 # Soma
 		addi $s0, $s0, 4 # incrementa o interador do array
 		
